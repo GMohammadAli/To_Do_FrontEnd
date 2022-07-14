@@ -5,7 +5,7 @@ import {
     IconButton, 
     Stack, 
     Toolbar, 
-    Typography 
+    Typography
 } from "@mui/material"
 import { Login, Logout } from "@mui/icons-material"
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
@@ -16,7 +16,7 @@ function Navbar() {
   const authContext = useContext(AuthContext)
   let navigate = useNavigate();
   return (
-    <AppBar position="static" color="primary">
+    <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit">
           <DensityMediumIcon />

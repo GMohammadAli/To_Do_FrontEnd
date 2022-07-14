@@ -1,13 +1,38 @@
-body {
+:root{
+  --Dark-Color:#202142;
+  --Alternate-Color: #ff6a95;
+}
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #dfe0f1;    
+  line-height: 1.6;
+}
+.App {
+  background-color: var(--Dark-Color);
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.4);
+  color:var(--Alternate-Color)
+}
+
+.Card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Select {
+  width: 100%;
+}
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
 }

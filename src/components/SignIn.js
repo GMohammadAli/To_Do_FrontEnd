@@ -76,7 +76,7 @@ function SignIn() {
                 >
                   Sign In
                 </Button>
-                <Grid container spacing={1}>
+                <Grid container>
                   <Grid item xs={5}></Grid>
                   <Grid item xs={7}>
                     <a href="/SignUp">Don't have an account? Sign Up</a>

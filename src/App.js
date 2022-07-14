@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import  SignUp from "./components/SignUp"
@@ -9,10 +8,21 @@ import  Navbar from "./components/Navbar"
 import UpdateForm from "./components/UpdateForm"
 import AuthProvider from './context/AuthContext';
 import TaskProvider from './context/TaskContext';
+import { createMuiTheme, ThemeProvider } from "@mui/material";
+
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#9c27b0",
+      contrastText: "#383838",
+    },
+  },
+});
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <AuthProvider>
         <TaskProvider>
           <Router>
@@ -27,7 +37,7 @@ function App() {
           </Router>
         </TaskProvider>
       </AuthProvider>
-    </>
+    </ThemeProvider>
   );
 }
 
