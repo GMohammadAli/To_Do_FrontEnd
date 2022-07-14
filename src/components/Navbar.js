@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { 
     AppBar ,  
     Button, 
@@ -7,11 +7,13 @@ import {
     Toolbar, 
     Typography 
 } from "@mui/material"
-import { Login } from "@mui/icons-material"
+import { Login, Logout } from "@mui/icons-material"
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import { useNavigate } from "react-router-dom"
+import { AuthContext } from '../context/AuthContext';
 
 function Navbar() {
+  const authContext = useContext(AuthContext)
   let navigate = useNavigate();
   return (
     <AppBar position="static" color="primary">
@@ -29,14 +31,25 @@ function Navbar() {
           <Button onClick={() => navigate("/addTasks")} color="inherit">
             Add Tasks
           </Button>
-          <Button
-            onClick={() => navigate("/SignIn")}
-            color="inherit"
-            endIcon={<Login />}
-          >
-            {" "}
-            Login
-          </Button>
+          {!authContext.isAuth ? (
+            <Button
+              onClick={() => navigate("/SignIn")}
+              color="inherit"
+              endIcon={<Login />}
+            >
+              {" "}
+              Login
+            </Button>
+          ) : (
+            <Button
+              onClick={() => authContext.logout()}
+              color="inherit"
+              endIcon={<Logout />}
+            >
+              {" "}
+              {authContext.user.email}
+            </Button>
+          )}
         </Stack>
       </Toolbar>
     </AppBar>
