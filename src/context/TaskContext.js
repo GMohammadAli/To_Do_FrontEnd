@@ -67,28 +67,14 @@ function TaskProvider({children}) {
       });
   };
 
-  //Update Task http://localhost:3000/users/1/tasks/{task_id} + token as auth header PATCH
   const updateTask = async (taskToBeUpdated,id) => {
     await axios.patch(
       `${process.env.REACT_APP_BACKEND_URL}/users/${authContext.user.id}/tasks/${id}`,
       taskToBeUpdated,
       { headers }
     )
-    .then(response => {
-       setTasks(
-        tasks.filter((task) => {
-          return task.id !== id;
-        })
-        )
-        setTasks((tasks) => [
-          ...tasks,
-          {
-            id: response.data.id,
-            title: response.data.title,
-            description: response.data.description,
-            status: response.data.status,
-          },
-        ]);
+    .then(() => {
+      getTasks()
     })
     .catch(err => {
         console.log(err)
