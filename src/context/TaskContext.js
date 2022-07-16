@@ -74,6 +74,7 @@ function TaskProvider({children}) {
       { headers }
     )
     .then(() => {
+      //This will automatically update the task.
       getTasks()
     })
     .catch(err => {
