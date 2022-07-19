@@ -8,10 +8,10 @@ import  Navbar from "./components/Navbar"
 import UpdateForm from "./components/UpdateForm"
 import AuthProvider from './context/AuthContext';
 import TaskProvider from './context/TaskContext';
-import { createMuiTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#9c27b0",
