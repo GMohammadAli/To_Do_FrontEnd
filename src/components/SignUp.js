@@ -76,6 +76,7 @@ function SignUp() {
                 />
                 <TextField
                   label="Password"
+                  type="password"
                   name="password"
                   variant="outlined"
                   color="secondary"
